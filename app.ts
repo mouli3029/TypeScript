@@ -1,30 +1,29 @@
-type Combinable = number | string;
-// We can use now use Combinable instead of number | string
-type ConversionDescriptor = 'as-number' | 'as-text'
-
-function combine(input1:Combinable ,input2:Combinable,resultCovertion: ConversionDescriptor) {
-    let result;
-    if(typeof input1 === 'number' && typeof input2 === 'number' || resultCovertion === "as-number"){
-        result = +input1 + +input2;
-    }
-    else{
-        result = input1.toString() + input2.toString();
-    }
-    return result;
-    /* if (resultCovertion === 'as-number') {
-        return +result;
-    } else{
-        return result.toString();
-    } */
+function add1(n1:number,n2:number){
+    return n1+ n2;
+}
+// void type -> function doesnot have a return type.
+// void --> returns undefined.
+function printResult1(num: number){
+    console.log("Result: "+num);
 }
 
-const combineAges = combine(30,26,'as-number');
-console.log(combineAges);
+// Callback
+function addAndHandle(n1:number,n2:number,cb:(num:number) => void) {
+    const result = n1 + n2;
+    cb(result);
+}
 
+printResult1(add1(5,12));
 
-const combineStringAges = combine(30,26,'as-text');
-console.log(combineStringAges);
+let combinedValues: (a:number,b:number) => number; // number is a return type.
 
-const combinedNames  = combine('Max','Anna','as-text');
-console.log(combinedNames)
-// Inorder to access both numbers as well as Strings we use union type
+combinedValues = add1;
+//combinedValues = printResult1; // TS doesnot complaint (but it doesnot take two parameters.)
+// combinedValues = 5;
+
+console.log(combinedValues(8,8));
+let someValue: undefined; // undefined is a valid type in JS . But we cannot use undefined with function eventhough the void function returns undefined.
+
+addAndHandle(10,20,(result)=> {
+    console.log(result);
+});
