@@ -11,3 +11,12 @@ if(typeof userInput === "string"){
     userName = userInput;
     // We need an extra type checking to assign an unknown to a string.
 }
+
+// NEVER TYPE
+
+// It returns nothing (more precisely  it returns never)
+function generateError(message: string,code:number):never {
+    throw {message : message , errorCode : code};
+}
+
+generateError('An error occured',500)
