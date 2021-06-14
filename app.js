@@ -1,3 +1,4 @@
+"use strict";
 var userInput; // We donot know yet what user enters.
 var userName;
 userInput = 5;
@@ -9,6 +10,7 @@ if (typeof userInput === "string") {
     // We need an extra type checking to assign an unknown to a string.
 }
 // NEVER TYPE
+// It returns nothing (more precisely  it returns never)
 function generateError(message, code) {
     throw { message: message, errorCode: code };
 }
