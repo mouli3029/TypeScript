@@ -1,32 +1,26 @@
-// Object type
-/* const person : {
-    name : string;
-    age : number
-} = {
-    name : "Venkata Mouli",
-    age : 30
-} */
+/* const ADMIN = 0;
+const READ_ONLY = 1;
+const AUTHOR = 2; */
+var Role;
+(function (Role) {
+    Role[Role["ADMIN"] = 0] = "ADMIN";
+    Role[Role["READ_ONLY"] = 1] = "READ_ONLY";
+    Role[Role["AUTHOR"] = 2] = "AUTHOR";
+})(Role || (Role = {}));
+;
 var person = {
     name: "Venkata Mouli",
     age: 30,
     hobbies: ['Sports', 'Cooking'],
-    role: [2, 'author']
+    role: Role.ADMIN
 };
-person.role.push('admin'); // push is an exception in TS which TS cannot find.
-// person.role[1] = 10;
-// Tells JS it is an array of strings.
+if (person.role === Role.AUTHOR) {
+    console.log('is author');
+}
 var favouriteActivities;
 favouriteActivities = ['Sports'];
-// In order to work all types in array like string number add any[] type.
 for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
     var hobby = _a[_i];
     console.log(hobby.toUpperCase());
 }
-// Object Types in TS 
-// person is not the JS object it is object types
-// If we apply the type object to person then we cannot access the properties.
-/* const person : object = {
-    name : "Venkata Mouli",
-    age : 30
-} */
-console.log(person.name); // TS Infers the type of properties
+console.log(person.name);
