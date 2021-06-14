@@ -9,8 +9,11 @@
 var person = {
     name: "Venkata Mouli",
     age: 30,
-    hobbies: ['Sports', 'Cooking']
+    hobbies: ['Sports', 'Cooking'],
+    role: [2, 'author']
 };
+person.role.push('admin'); // push is an exception in TS which TS cannot find.
+// person.role[1] = 10;
 // Tells JS it is an array of strings.
 var favouriteActivities;
 favouriteActivities = ['Sports'];

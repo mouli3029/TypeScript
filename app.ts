@@ -7,11 +7,20 @@
     age : 30
 } */
 
-const person  = {
+const person :{
+    name : string;
+    age : number;
+    hobbies : string[];
+    role : [number,string]; // marks the tuple type.(i want speacial array  with exactly two elements first one number and second value as string)
+}  = {
     name : "Venkata Mouli",
     age : 30,
-    hobbies : ['Sports','Cooking']
+    hobbies : ['Sports','Cooking'],
+    role : [2,'author']
 }
+
+person.role.push('admin'); // push is an exception in TS which TS cannot find.
+// person.role[1] = 10;
 
 // Tells JS it is an array of strings.
 let favouriteActivities : string[];
