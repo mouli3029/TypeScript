@@ -1,14 +1,20 @@
-function add(n1, n2, showResult, phrase) {
-    var result = n1 + n2;
-    if (showResult) {
-        console.log(phrase + result);
-    }
-    else {
-        return result;
-    }
-}
-var number1 = 5;
-var number2 = 2.8;
-var printResult = true;
-var resultPhrase = "Result is: ";
-add(number1, number2, printResult, resultPhrase);
+// Object type
+/* const person : {
+    name : string;
+    age : number
+} = {
+    name : "Venkata Mouli",
+    age : 30
+} */
+var person = {
+    name: "Venkata Mouli",
+    age: 30
+};
+// Object Types in TS 
+// person is not the JS object it is object types
+// If we apply the type object to person then we cannot access the properties.
+/* const person : object = {
+    name : "Venkata Mouli",
+    age : 30
+} */
+console.log(person.name); // TS Infers the type of properties
