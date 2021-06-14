@@ -9,8 +9,20 @@
 
 const person  = {
     name : "Venkata Mouli",
-    age : 30
+    age : 30,
+    hobbies : ['Sports','Cooking']
 }
+
+// Tells JS it is an array of strings.
+let favouriteActivities : string[];
+favouriteActivities = ['Sports'];
+
+// In order to work all types in array like string number add any[] type.
+for(const hobby of person.hobbies){
+    console.log(hobby.toUpperCase())
+}
+
+
 
 // Object Types in TS 
 // person is not the JS object it is object types
